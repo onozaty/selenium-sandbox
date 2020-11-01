@@ -14,6 +14,8 @@ WebDriverのAPI呼び出しは、クライアントライブラリが用意さ�
 
 ## WebDriver
 
+* [WebDriver :: Seleniumドキュメント](https://www.selenium.dev/documentation/ja/webdriver/)
+
 WebDriverを使うことで、ブラウザ操作をプログラムで行うことができます。
 
 実行する際には、各ブラウザ用のドライバを入手し、パスに設定する必要があります。
@@ -42,6 +44,26 @@ driver.findElement(By.id("search-by")).sendKeys("abc");
 // id=search-buttonの要素を探してclick
 driver.findElement(By.id("search-button")).click();
 ```
+
+## Selenium IDE
+
+* [Selenium IDE · Open source record and playback test automation for the web](https://www.selenium.dev/selenium-ide/)
+
+Selenium IDEはブラウザ操作の記録、実行が行えるブラウザの拡張機能です。ChromeとFirefox版があります。
+
+昔のSelenium IDEはFirefox版のみでした。Firefoxの拡張機能のWebExtensions化に伴い、まったく新しいものとして作り替えられ、今に至っています。  
+当初は出来ることも少なく、旧Selenium IDEより機能がかなり落ちるものでしたが、現在ではコマンドも揃ってきて、十分使えるものとなっています。
+
+* [Commands · Selenium IDE](https://docs.seleniumhq.org/selenium-ide/docs/en/api/commands/)
+
+拡張機能をインストール後、Selenium IDEを起動し、ブラウザ操作のレコーディングを行います。Assertもブラウザ上で右クリックから追加することができます。 
+
+レコーディングしたものは再度実行することができます。ファイルとしても保存できるので、再度開いて実行することも可能です。  
+また保存したファイル(`*.side`)は、`selenium-side-runner`というコマンドラインツールによって実行することも出来ます。
+
+* [Command\-line Runner · Selenium IDE](https://www.selenium.dev/selenium-ide/docs/en/introduction/command-line-runner)
+
+for each や if 文などの制御構文も書くことができるので、コマンドを直接入力することで、複雑な動きも実現できます。
 
 ## 参考サイト
 
