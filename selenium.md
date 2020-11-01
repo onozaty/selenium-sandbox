@@ -56,17 +56,28 @@ Selenium IDEはブラウザ操作の記録、実行が行えるブラウザの�
 
 * [Commands · Selenium IDE](https://docs.seleniumhq.org/selenium-ide/docs/en/api/commands/)
 
-拡張機能をインストール後、Selenium IDEを起動し、ブラウザ操作のレコーディングを行います。Assertもブラウザ上で右クリックから追加することができます。 
+拡張機能をインストール後、Selenium IDEを起動し、ブラウザ操作のレコーディングを行います。Assertもブラウザ上で右クリックから追加することができます。  
+for each や if 文などの制御構文も書くことができるので、コマンドを直接入力することで、複雑な動きも実現できます。
 
 レコーディングしたものは再度実行することができます。ファイルとしても保存できるので、再度開いて実行することも可能です。  
 また保存したファイル(`*.side`)は、`selenium-side-runner`というコマンドラインツールによって実行することも出来ます。
 
 * [Command\-line Runner · Selenium IDE](https://www.selenium.dev/selenium-ide/docs/en/introduction/command-line-runner)
 
-for each や if 文などの制御構文も書くことができるので、コマンドを直接入力することで、複雑な動きも実現できます。
+Selenium IDEから各言語のコードをエクスポートすることができます。これによって、WebDriverを使ったコードとして再利用することができます。
+
+## Selenium Grid
+
+* [Grid :: Seleniumドキュメント](https://www.selenium.dev/documentation/ja/grid/)
+
+Selenium Gridを使うことで、複数のリモートマシン上でSeleniumを実行することができます。
+
+これにより、下記が実現できます。
+
+* 異なるブラウザ＋ブラウザバージョン、異なるOS上でのテストを一元管理しながら、複数のリモートマシン上で実行できる
+* 並列で実行することで、テストの時間短縮を行える
 
 ## 参考サイト
 
 * [SeleniumHQ Browser Automation](https://www.selenium.dev/) Seleniumの本家サイト
 * [Seleniumブラウザー自動化プロジェクト :: Seleniumドキュメント](https://www.selenium.dev/documentation/ja/) Seleniumのドキュメント(日本語訳)
-
