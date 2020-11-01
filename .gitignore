@@ -1,0 +1,4 @@
+﻿.vagrant/
+**/bin/
+**/build/
+**/.gradle/
