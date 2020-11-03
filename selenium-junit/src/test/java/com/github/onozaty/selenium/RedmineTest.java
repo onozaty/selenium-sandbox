@@ -33,10 +33,7 @@ public class RedmineTest {
 
         driver.get("http://192.168.33.10/");
 
-        driver.findElement(By.cssSelector("a[href=\"/login\"]")).click();
-        driver.findElement(By.id("username")).sendKeys("admin");
-        driver.findElement(By.id("password")).sendKeys("password");
-        driver.findElement(By.id("login-submit")).click();
+        login();
 
         driver.findElement(By.cssSelector("a[href=\"/projects\"]")).click();
         driver.findElement(By.cssSelector("a[href=\"/projects/a\"]")).click();
@@ -77,6 +74,42 @@ public class RedmineTest {
                 .isEqualTo("Redmine Admin");
         assertThat(driver.findElement(By.cssSelector("div.attributes div.category div.value")).getText())
                 .isEqualTo("カテゴリ2");
+    }
+
+    @Test
+    public void ニュース投稿() {
+
+        driver.get("http://192.168.33.10/");
+
+        login();
+
+        driver.findElement(By.cssSelector("a[href=\"/projects\"]")).click();
+        driver.findElement(By.cssSelector("a[href=\"/projects/a\"]")).click();
+
+        driver.findElement(By.id("new-object")).click();
+        driver.findElement(By.cssSelector("a.new-news")).click();
+
+        // ニュースの追加
+        String title = RandomStringUtils.randomAlphanumeric(20);
+        driver.findElement(By.id("news_title")).sendKeys(title);
+
+        String description = RandomStringUtils.randomAlphanumeric(50);
+        driver.findElement(By.id("news_description")).sendKeys(description);
+
+        driver.findElement(By.name("commit")).click();
+
+        // ニュース追加の確認
+        assertThat(driver.findElement(By.id("flash_notice")).getText()).isEqualTo("作成しました。");
+        assertThat(driver.findElement(By.xpath("//*[@id=\"content\"]/article[1]/header/h3")).getText())
+                .isEqualTo(title);
+    }
+
+    private void login() {
+
+        driver.findElement(By.cssSelector("a[href=\"/login\"]")).click();
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("password");
+        driver.findElement(By.id("login-submit")).click();
     }
 
     @After
