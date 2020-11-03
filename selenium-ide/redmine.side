@@ -1,0 +1,536 @@
+{
+  "id": "c4c9ba8c-e50a-45de-8349-6224926bf74f",
+  "version": "2.0",
+  "name": "redmine",
+  "url": "http://192.168.33.10",
+  "tests": [{
+    "id": "a6042c44-bc0e-4519-8803-3d0dce8df738",
+    "name": "チケット作成",
+    "commands": [{
+      "id": "032d2bc3-5efc-48a7-99c3-d34f594aa869",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6eb12da-75b2-4cc9-95f4-6dfd85d3fa93",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.querySelector(\"a.login\") === null",
+      "targets": [],
+      "value": "isLogined"
+    }, {
+      "id": "f1d8a74f-556e-4502-97f4-651c0338b58a",
+      "comment": "",
+      "command": "if",
+      "target": "!${isLogined}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2be4dd45-735d-4c11-8982-8b292096982e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ログイン",
+      "targets": [
+        ["linkText=ログイン", "linkText"],
+        ["css=.login", "css:finder"],
+        ["xpath=//a[contains(text(),'ログイン')]", "xpath:link"],
+        ["xpath=//div[@id='account']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'ログイン')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba08015f-ec02-4a76-8921-bdee77a3f083",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='login-form']/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "32bd9893-e172-4e01-8c27-a3aad0463402",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='login-form']/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "10c32d07-3b16-49b1-8c7e-04ccc4272681",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-submit",
+      "targets": [
+        ["id=login-submit", "id"],
+        ["name=login", "name"],
+        ["css=#login-submit", "css:finder"],
+        ["xpath=//input[@id='login-submit']", "xpath:attributes"],
+        ["xpath=//div[@id='login-form']/form/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff475352-7842-4762-b027-d3c52bafe348",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fe57174-ccff-424e-8554-39b284a17f4e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=プロジェクト",
+      "targets": [
+        ["linkText=プロジェクト", "linkText"],
+        ["css=.projects:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'プロジェクト')]", "xpath:link"],
+        ["xpath=//div[@id='top-menu']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/projects')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'プロジェクト')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b698d869-6228-471a-a73a-2727946d4f94",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=a",
+      "targets": [
+        ["linkText=a", "linkText"],
+        ["css=.root:nth-child(1) > .root > .project", "css:finder"],
+        ["xpath=(//a[contains(text(),'a')])[3]", "xpath:link"],
+        ["xpath=//div[@id='projects-index']/ul/li/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/projects/a')])[2]", "xpath:href"],
+        ["xpath=//li/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4dcf88a-dd02-470b-80ec-a74eb3ccfa03",
+      "comment": "",
+      "command": "click",
+      "target": "id=new-object",
+      "targets": [
+        ["id=new-object", "id"],
+        ["linkText=+", "linkText"],
+        ["css=#new-object", "css:finder"],
+        ["xpath=//a[contains(text(),'+')]", "xpath:link"],
+        ["xpath=//a[@id='new-object']", "xpath:attributes"],
+        ["xpath=//div[@id='main-menu']/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f949e531-e6fa-4261-b62c-829080f837da",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=新しいチケット",
+      "targets": [
+        ["linkText=新しいチケット", "linkText"],
+        ["css=.new-issue-sub", "css:finder"],
+        ["xpath=//a[contains(text(),'新しいチケット')]", "xpath:link"],
+        ["xpath=//div[@id='main-menu']/ul/li/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/projects/a/issues/new')]", "xpath:href"],
+        ["xpath=//li/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'新しいチケット')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bcc09d2-287d-441b-addf-464b23d65a0e",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"チケット\" + new Date().toISOString()",
+      "targets": [],
+      "value": "subject"
+    }, {
+      "id": "4a384e97-d660-4f72-aa34-33a5512352c6",
+      "comment": "",
+      "command": "type",
+      "target": "id=issue_subject",
+      "targets": [
+        ["id=issue_subject", "id"],
+        ["name=issue[subject]", "name"],
+        ["css=#issue_subject", "css:finder"],
+        ["xpath=//input[@id='issue_subject']", "xpath:attributes"],
+        ["xpath=//div[@id='all_attributes']/p[3]/input", "xpath:idRelative"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": "${subject}"
+    }, {
+      "id": "69c2aef1-9677-4f2b-a075-cb2bfc095536",
+      "comment": "",
+      "command": "type",
+      "target": "id=issue_description",
+      "targets": [
+        ["id=issue_description", "id"],
+        ["name=issue[description]", "name"],
+        ["css=#issue_description", "css:finder"],
+        ["xpath=//textarea[@id='issue_description']", "xpath:attributes"],
+        ["xpath=//span[@id='issue_description_and_toolbar']/div/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "説明"
+    }, {
+      "id": "7375548b-c5e5-4a8f-b5b4-8c3eeea61b55",
+      "comment": "",
+      "command": "click",
+      "target": "id=issue_assigned_to_id",
+      "targets": [
+        ["id=issue_assigned_to_id", "id"],
+        ["name=issue[assigned_to_id]", "name"],
+        ["css=#issue_assigned_to_id", "css:finder"],
+        ["xpath=//select[@id='issue_assigned_to_id']", "xpath:attributes"],
+        ["xpath=//div[@id='attributes']/div/div/p[3]/select", "xpath:idRelative"],
+        ["xpath=//p[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88a0d889-1fdc-4219-a15a-ef55fc930361",
+      "comment": "",
+      "command": "select",
+      "target": "id=issue_assigned_to_id",
+      "targets": [],
+      "value": "label=<< 自分 >>"
+    }, {
+      "id": "86317e74-1f34-4a45-b9fc-04f430785241",
+      "comment": "",
+      "command": "click",
+      "target": "id=issue_assigned_to_id",
+      "targets": [
+        ["id=issue_assigned_to_id", "id"],
+        ["name=issue[assigned_to_id]", "name"],
+        ["css=#issue_assigned_to_id", "css:finder"],
+        ["xpath=//select[@id='issue_assigned_to_id']", "xpath:attributes"],
+        ["xpath=//div[@id='attributes']/div/div/p[3]/select", "xpath:idRelative"],
+        ["xpath=//p[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c4c98ae-4450-4117-be60-06bf6f95b886",
+      "comment": "",
+      "command": "click",
+      "target": "id=issue_category_id",
+      "targets": [
+        ["id=issue_category_id", "id"],
+        ["name=issue[category_id]", "name"],
+        ["css=#issue_category_id", "css:finder"],
+        ["xpath=//select[@id='issue_category_id']", "xpath:attributes"],
+        ["xpath=//div[@id='attributes']/div/div/p[4]/select", "xpath:idRelative"],
+        ["xpath=//p[4]/select", "xpath:position"],
+        ["xpath=//select[contains(.,' \nカテゴリ1\nカテゴリ2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e98098f-7775-4ee6-bd3a-46ad575538b4",
+      "comment": "",
+      "command": "select",
+      "target": "id=issue_category_id",
+      "targets": [],
+      "value": "label=カテゴリ2"
+    }, {
+      "id": "3c5b14a7-8338-49d5-ab82-93427ffd15e0",
+      "comment": "",
+      "command": "click",
+      "target": "id=issue_category_id",
+      "targets": [
+        ["id=issue_category_id", "id"],
+        ["name=issue[category_id]", "name"],
+        ["css=#issue_category_id", "css:finder"],
+        ["xpath=//select[@id='issue_category_id']", "xpath:attributes"],
+        ["xpath=//div[@id='attributes']/div/div/p[4]/select", "xpath:idRelative"],
+        ["xpath=//p[4]/select", "xpath:position"],
+        ["xpath=//select[contains(.,' \nカテゴリ1\nカテゴリ2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8758cf6a-aaaa-4713-bb84-c0b9194f838b",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=#issue-form > input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//form[@id='issue-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[2]/form/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c662b59a-d49e-4ac9-80fd-c7fd0b449228",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(1) > h3:nth-child(1)",
+      "targets": [
+        ["css=div:nth-child(1) > h3:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div[2]/div/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/div/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'チケットX')]", "xpath:innerText"]
+      ],
+      "value": "${subject}"
+    }]
+  }, {
+    "id": "5b545f3a-9567-4bbc-9c14-7c9146632e81",
+    "name": "ニュース投稿",
+    "commands": [{
+      "id": "2c1fd791-24e3-4598-a557-dd9069c5312d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19977cb8-2222-4bb8-a269-b3cf6b5a2ec5",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.querySelector(\"a.login\") === null",
+      "targets": [],
+      "value": "isLogined"
+    }, {
+      "id": "af830b64-1340-47c4-981d-4037076b2448",
+      "comment": "",
+      "command": "if",
+      "target": "!${isLogined}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "349e072b-8353-4606-a6fe-f9cf755cf24c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ログイン",
+      "targets": [
+        ["linkText=ログイン", "linkText"],
+        ["css=.login", "css:finder"],
+        ["xpath=//a[contains(text(),'ログイン')]", "xpath:link"],
+        ["xpath=//div[@id='account']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'ログイン')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f128f155-7b45-4e6d-8523-a0e0d9202d0d",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='login-form']/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "95615021-f863-4d31-b1ca-7ba95413ba05",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='login-form']/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "0bc7a266-67b8-4b6b-8988-aeef89b211e9",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-submit",
+      "targets": [
+        ["id=login-submit", "id"],
+        ["name=login", "name"],
+        ["css=#login-submit", "css:finder"],
+        ["xpath=//input[@id='login-submit']", "xpath:attributes"],
+        ["xpath=//div[@id='login-form']/form/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4eba285-ae09-4e85-a004-9697f2463ddb",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "afa142fa-2ea9-40d3-ac2f-7250cbd961c5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=プロジェクト",
+      "targets": [
+        ["linkText=プロジェクト", "linkText"],
+        ["css=.projects:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'プロジェクト')]", "xpath:link"],
+        ["xpath=//div[@id='top-menu']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/projects')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'プロジェクト')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8fa0dca0-47a3-4e15-b2a6-89c40c810c6d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=a",
+      "targets": [
+        ["linkText=a", "linkText"],
+        ["css=.root:nth-child(1) > .root > .project", "css:finder"],
+        ["xpath=(//a[contains(text(),'a')])[3]", "xpath:link"],
+        ["xpath=//div[@id='projects-index']/ul/li/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/projects/a')])[2]", "xpath:href"],
+        ["xpath=//li/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "afe3ae9d-456c-49d4-a3ca-7f63d28b12d3",
+      "comment": "",
+      "command": "click",
+      "target": "id=new-object",
+      "targets": [
+        ["id=new-object", "id"],
+        ["linkText=+", "linkText"],
+        ["css=#new-object", "css:finder"],
+        ["xpath=//a[contains(text(),'+')]", "xpath:link"],
+        ["xpath=//a[@id='new-object']", "xpath:attributes"],
+        ["xpath=//div[@id='main-menu']/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cac7a63f-bdc7-4667-a800-a81ac2670509",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ニュースを追加",
+      "targets": [
+        ["linkText=新しいチケット", "linkText"],
+        ["css=.new-issue-sub", "css:finder"],
+        ["xpath=//a[contains(text(),'新しいチケット')]", "xpath:link"],
+        ["xpath=//div[@id='main-menu']/ul/li/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/projects/a/issues/new')]", "xpath:href"],
+        ["xpath=//li/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'新しいチケット')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd35ffc9-1ec2-429b-870d-a9aa9cdc9baf",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"ニュース\" + new Date().toISOString()",
+      "targets": [],
+      "value": "title"
+    }, {
+      "id": "4b003e59-bdbd-4173-9d19-478dfa781e54",
+      "comment": "",
+      "command": "type",
+      "target": "id=news_title",
+      "targets": [
+        ["id=news_title", "id"],
+        ["name=news[title]", "name"],
+        ["css=#news_title", "css:finder"],
+        ["xpath=//input[@id='news_title']", "xpath:attributes"],
+        ["xpath=//form[@id='news-form']/div/p/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": "${title}"
+    }, {
+      "id": "541d7cfe-cfb9-4cff-858c-69ac0ccd2b6d",
+      "comment": "",
+      "command": "type",
+      "target": "id=news_summary",
+      "targets": [
+        ["id=news_summary", "id"],
+        ["name=news[summary]", "name"],
+        ["css=#news_summary", "css:finder"],
+        ["xpath=//textarea[@id='news_summary']", "xpath:attributes"],
+        ["xpath=//form[@id='news-form']/div/p[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "サマリー"
+    }, {
+      "id": "4c7bde48-d99a-4431-8671-81578075d7c4",
+      "comment": "",
+      "command": "type",
+      "target": "id=news_description",
+      "targets": [
+        ["id=news_description", "id"],
+        ["name=news[description]", "name"],
+        ["css=#news_description", "css:finder"],
+        ["xpath=//textarea[@id='news_description']", "xpath:attributes"],
+        ["xpath=//form[@id='news-form']/div[2]/p[3]/div/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//div[2]/textarea", "xpath:position"]
+      ],
+      "value": "説明"
+    }, {
+      "id": "9d525e9d-d82a-445b-9738-651cebfcbe40",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//form[@id='news-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[2]/form/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0b828e1-b81f-4c20-afb4-48e06d287021",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=flash_notice",
+      "targets": [
+        ["id=flash_notice", "id"],
+        ["css=#flash_notice", "css:finder"],
+        ["xpath=//div[@id='flash_notice']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div", "xpath:position"]
+      ],
+      "value": "作成しました。"
+    }, {
+      "id": "f7bfda6d-efb9-4158-a545-1895279c9ae6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h3:nth-child(1)",
+      "targets": [
+        ["css=h3:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='content']/article/header/h3", "xpath:idRelative"],
+        ["xpath=//header/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'aaaa')]", "xpath:innerText"]
+      ],
+      "value": "${title}"
+    }]
+  }],
+  "suites": [{
+    "id": "ddf2f81e-dfa2-4c6b-a6f2-ae1d4479a2bf",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a6042c44-bc0e-4519-8803-3d0dce8df738"]
+  }],
+  "urls": ["http://192.168.33.10/"],
+  "plugins": []
+}
