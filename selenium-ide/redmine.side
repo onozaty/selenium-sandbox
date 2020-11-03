@@ -529,7 +529,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["a6042c44-bc0e-4519-8803-3d0dce8df738"]
+    "tests": ["a6042c44-bc0e-4519-8803-3d0dce8df738", "5b545f3a-9567-4bbc-9c14-7c9146632e81"]
   }],
   "urls": ["http://192.168.33.10/"],
   "plugins": []
