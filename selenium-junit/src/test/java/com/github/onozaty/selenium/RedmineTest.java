@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -25,7 +26,11 @@ public class RedmineTest {
 
     @Before
     public void setupTest() {
-        driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions()
+                .setHeadless(true)
+                .addArguments("-window-size=1280,1024");
+        driver = new ChromeDriver(options);
     }
 
     @Test
@@ -116,6 +121,7 @@ public class RedmineTest {
     public void teardown() {
         if (driver != null) {
             driver.quit();
+            driver = null;
         }
     }
 }
