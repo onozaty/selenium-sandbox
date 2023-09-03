@@ -14,22 +14,14 @@ WebDriverのAPI呼び出しは、クライアントライブラリが用意さ�
 
 ## WebDriver
 
-* [WebDriver :: Seleniumドキュメント](https://www.selenium.dev/documentation/ja/webdriver/)
+* [WebDriver \| Selenium](https://www.selenium.dev/ja/documentation/webdriver/)
 
 WebDriverを使うことで、ブラウザ操作をプログラムで行うことができます。
 
-実行する際には、各ブラウザ用のドライバを入手し、パスに設定する必要があります。
-例えばChrome用のドライバ(ChromeDriver)は、下記サイトからChromeのバージョンと利用OSに応じて入手します。
+~~実行する際には、各ブラウザ用のドライバを入手し、パスに設定する必要があります。~~  
+Selenium Managerという機能がSelenium本体に同梱されるようになり、自動で各種ドライバを取得してくれるようになりました。
 
-* [Downloads \- ChromeDriver \- WebDriver for Chrome](https://chromedriver.chromium.org/downloads)
-
-システムプロパティの`webdriver.chrome.driver`にダウンロードしたChromeドライバのパスを設定します。実行時の引数で設定するか、またはプログラムで設定します。
-
-```java
-System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
-```
-
-WebDriverのインスタンスを生成し、そのインスタンスを通して操作を行います。
+* [Selenium Manager \(Beta\) \| Selenium](https://www.selenium.dev/ja/documentation/selenium_manager/)
 
 ```java
 WebDriver driver = new ChromeDriver();
