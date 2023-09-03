@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,22 +12,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class RedmineTest {
 
     private WebDriver driver;
-
-    @BeforeClass
-    public static void setupClass() {
-        WebDriverManager.chromedriver().setup();
-    }
 
     @Before
     public void setupTest() {
 
         ChromeOptions options = new ChromeOptions()
-                .setHeadless(true)
+                .addArguments("--headless=new")
                 .addArguments("-window-size=1280,1024");
         driver = new ChromeDriver(options);
     }
