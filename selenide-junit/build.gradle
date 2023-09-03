@@ -6,6 +6,10 @@ repositories {
     jcenter()
 }
 
+java {
+    sourceCompatibility = '17'
+}
+
 def defaultEncoding = 'UTF-8'
 tasks.withType(AbstractCompile)*.options*.encoding = defaultEncoding
 
@@ -14,5 +18,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.assertj:assertj-core:3.17.2'
 
-    testImplementation 'com.codeborne:selenide:5.15.1'
+    testImplementation 'com.codeborne:selenide:6.17.2'
 }

@@ -12,6 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
+import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 
@@ -20,7 +21,7 @@ public class RedmineTest {
     @BeforeClass
     public static void setupClass() {
 
-        Configuration.browser = WebDriverRunner.CHROME;
+        Configuration.browser = Browsers.CHROME;
         Configuration.browserSize = "1280x1024";
         Configuration.headless = true;
     }
